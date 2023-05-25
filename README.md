@@ -31,13 +31,13 @@
 # * Спринт 11. Часть 1:
 1. Переработана архитектура проекта: добавлены дополнительные поля в классы Film (жанр и рейтинг) и User (список дружбы).
  
-2. Спроектировна схема БД:
+2. Спроектирована схема БД:
    ![ER-диаграмма](/images/FILMORATE_DB.png)
 * Связь между User (пользователи) и User_friends (таблица сопоставления друзей) "many to many";
-* Связь между User и Film  "many to many" через табличку likes;
+* Связь между User и Film  "many to many" через табличку Likes;
 * Связь между Film и Genres  "many to many" через табличку Film_Genres; 
 * Связь между Rating и Film "one to many" т.к. rating_id уникален и может быть присвоен множеству фильмов;
-* Для таблиц friends, likes и film_genre_line использованы составные Primary Key из двух id.
+* Для таблиц User_Friends, Likes и Film_Genres использованы составные Primary Key из двух id.
 
 3. ### Примеры запросов
 
@@ -115,7 +115,7 @@ FROM Users;
 ```SQL
 SELECT *
 FROM Genres
-WHERE genre_id = ?;;
+WHERE genre_id = ?;
 ``` 
 
 * Запрос всех жанров:
