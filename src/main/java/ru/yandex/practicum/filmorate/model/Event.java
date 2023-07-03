@@ -7,9 +7,6 @@ import lombok.NoArgsConstructor;
 import ru.yandex.practicum.filmorate.model.enums.EventType;
 import ru.yandex.practicum.filmorate.model.enums.Operation;
 
-import java.util.HashMap;
-import java.util.Map;
-
 @Data
 @Builder
 @AllArgsConstructor
