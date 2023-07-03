@@ -203,7 +203,8 @@ public class FilmDBStorage implements FilmStorage {
     }
 
     public List<Film> searchFilmForTitleAndDirector(String queryStr) {
-        String query = "Select FILMS.id, FILMS.name, FILMS.description, FILMS.releaseDate, FILMS.duration, FILMS.mpaid " +
+        String query = "Select FILMS.id, FILMS.name, FILMS.description, FILMS.releaseDate, FILMS.duration, FILMS.mpaid "
+                +
                 "FROM FILMS " +
                 "LEFT JOIN FILMDIRECTORS ON FILMDIRECTORS.FILMID = films.ID " +
                 "LEFT JOIN DIRECTORS ON DIRECTORS.directorid = FILMDIRECTORS.DIRECTORID " +
@@ -245,7 +246,8 @@ public class FilmDBStorage implements FilmStorage {
     public List<Film> getTopFilms(Long count, Long genreId, Long year) {
 
         // в случае если есть и genreid и year
-        String subquery = "WHERE g.id = " + genreId + " AND EXTRACT (YEAR FROM CAST (f.releasedate AS date)) = " + year + " ";
+        String subquery = "WHERE g.id = " + genreId + " AND EXTRACT (YEAR FROM CAST (f.releasedate AS date)) = " + year
+                + " ";
 
         // в случае если есть ТОЛЬКО year
         if ((genreId == null || genreId == 0) && (year != null && year != 0)) {

@@ -1,6 +1,5 @@
 package ru.yandex.practicum.filmorate.storage;
 
-import java.sql.ResultSet;
 import java.util.List;
 import java.util.Set;
 
