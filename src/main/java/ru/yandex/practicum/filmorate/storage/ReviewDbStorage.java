@@ -146,6 +146,7 @@ public class ReviewDbStorage implements ReviewStorage {
                     .isPositive(resultSet.getBoolean("isPositive"))
                     .build();
         } catch (SQLException sqlException) {
+            throw new IllegalArgumentException(sqlException.getMessage());
         }
         try {
             build.setUseful(resultSet.getInt("useful"));
